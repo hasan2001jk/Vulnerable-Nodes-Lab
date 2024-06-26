@@ -1,0 +1,10 @@
+[2024-06-25T19:49:53Z]Starting Merlin Server version 1.0.1 build nonRelease
+[2024-06-26T06:54:46Z]Starting Merlin Server version 1.0.1 build nonRelease
+[2024-06-26T07:16:19Z]Starting Merlin Server version 1.0.1 build nonRelease
+[2024-06-26T08:20:59Z]Starting Merlin Server version 1.0.1 build nonRelease
+[2024-06-26T08:57:37Z]Starting Merlin Server version 1.0.1 build nonRelease
+[2024-06-26T09:32:08Z]Starting Merlin Server version 1.0.1 build nonRelease
+[2024-06-26T11:09:07Z]Starting Merlin Server version 1.0.1 build nonRelease
+[2024-06-26T11:16:25Z]Starting Merlin Server version 1.0.1 build nonRelease
+[2024-06-26T11:21:20Z]Starting Merlin Server version 1.0.1 build nonRelease
+[2024-06-26T13:28:50Z]Starting Merlin Server version 1.0.1 build nonRelease

@@ -16,7 +16,7 @@ services:
    hostname: shellshock
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.5
+       ipv4_address: 192.168.1.5
 
 # https://github.com/vulhub/vulhub/tree/master/jenkins/CVE-2018-1000861
  jenkins:
@@ -31,7 +31,7 @@ services:
    hostname: jenkins
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.6
+       ipv4_address: 192.168.1.6
 
 # https://github.com/vulhub/vulhub/tree/master/phpmyadmin/CVE-2018-12613
  phpmyadmin:
@@ -48,7 +48,7 @@ services:
    hostname: phpmyadmin
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.7
+       ipv4_address: 192.168.1.7
 
  mysql:
    image: mysql:5.5
@@ -61,7 +61,7 @@ services:
    hostname: mysql
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.8
+       ipv4_address: 192.168.1.8
 
  telnetserver:
    build: ./telnetserver
@@ -75,7 +75,7 @@ services:
      - ./files:/files
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.9
+       ipv4_address: 192.168.1.9
 
 # https://github.com/vulhub/vulhub/tree/master/log4j/CVE-2021-44228
  solr-log4j:
@@ -88,7 +88,7 @@ services:
    hostname: solr-log4j
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.11
+       ipv4_address: 192.168.1.11
  kali:
    build: ./kali
    # Note: If you don't want to build everything, use the image then apt install what you want/need
@@ -102,7 +102,7 @@ services:
      - "22"
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.10
+       ipv4_address: 192.168.1.10
 
 # https://github.com/trustedsec/trevorc2
 
@@ -114,10 +114,11 @@ services:
    tty: true
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.12
+       ipv4_address: 192.168.1.12
 
 # https://github.com/opsxcq/exploit-CVE-2017-7494
 # https://github.com/ly4k/PwnKit
+# https://github.com/t0kx/privesc-CVE-2010-0426
 
  vul-linux:
    build: ./vul-linux
@@ -129,7 +130,9 @@ services:
      - ./files:/files
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.13
+       ipv4_address: 192.168.1.13
+
+# Usual server for transfer file in inner network
 
  http-server:
    build: ./http-server
@@ -144,7 +147,7 @@ services:
      - ./files:/files
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.14
+       ipv4_address: 192.168.1.14
 
 #
 
@@ -159,7 +162,7 @@ services:
      - ./merlin/agent-log:/opt/merlin/data/agents
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.15
+       ipv4_address: 192.168.1.15
 
 # https://medium.com/axon-technologies/installing-a-windows-virtual-machine-in-a-linux-docker-container-c78e4c3f9ba1
 # This article was a starting point, updated to Ubuntu 20.04 and added several enhancements and modifications
@@ -181,15 +184,15 @@ services:
      - /dev/net/tun
    networks:
      vulhubnet:
-       ipv4_address: 10.1.1.16
+       ipv4_address: 192.168.1.16
 
 networks:
   vulhubnet:
     driver: bridge
     ipam:
       config:
-        - subnet: 10.1.1.0/24
-          gateway: 10.1.1.1
+        - subnet: 192.168.1.0/24
+          gateway: 192.168.1.1
 
 # docker network create --subnet=10.1.1.0/24 vulhubnet
 #
